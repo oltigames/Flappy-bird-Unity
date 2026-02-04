@@ -18,11 +18,13 @@ public class StateManager : MonoBehaviour
     
     // Reference to the generated C# Input class with player controls
     private PlayerControls input;
+    private AudioManager audioManager; 
     
     private void Awake()
     {
         isPaused = false;
         input = new PlayerControls();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void OnEnable()
@@ -51,6 +53,7 @@ public class StateManager : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
+        audioManager.PlaySFX(audioManager.scoreIncreaseSound);
     }
     
     public void GameOver()
