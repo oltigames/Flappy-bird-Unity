@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - AddScore
+  - Audio
   layers:
   - Default
   - TransparentFX
